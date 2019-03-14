@@ -1,0 +1,9 @@
+[user]
+  name = Raúl Negrón
+  email = raul.esteban.negron@gmail.com
+
+[core]
+  excludesfile = ~/.gitignore
+
+[credential]
+	helper = osxkeychain

@@ -1,0 +1,25 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 18,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.minimap.enabled": false,
+    "python.analysis.logLevel": "Information",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--py36"
+    ],
+    "jetbrainsKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "python.jediEnabled": false,
+    "terminal.integrated.fontSize": 18,
+    "standard.semistandard": true,
+    "javascript.validate.enable": false,
+    "editor.formatOnSave": true,
+    "window.title": "${activeEditorMedium}${separator}${rootName}"
+}

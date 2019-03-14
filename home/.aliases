@@ -1,0 +1,38 @@
+# Shortcuts
+alias cl="clear"
+alias o='open .'
+
+# exa replaces ls
+alias ls="exa -lG --color-scale --git"
+
+# bat replaces cat
+alias cat="bat --paging=never"
+export BAT_THEME="TwoDark"
+
+# tldr replaces man
+alias help='tldr'
+
+# Etc.
+alias fix_gestures="killall Dock"
+alias dj="python manage.py"
+alias killmigrations="find . -path \"*/migrations/*.py\" -not -name \"__init__.py\" -delete"
+alias github="cd ~/code/github/"
+
+# gbdev
+alias gb="cd ~/code/gb_dev/"
+alias bgb="wine /Applications/bgb/bgb.exe"
+alias gbmap="wine ~/code/gb_dev/gbmb/GBMB.EXE"
+alias gbtile="wine ~/code/gb_dev/gbtd/GBTD.EXE"
+alias gb-compile="gbdk-n-compile.sh"
+alias gb-link="gbdk-n-link.sh"
+alias gb-build="gbdk-n-make-rom.sh"
+alias dino=make
+alias gbasm=rgbasm
+alias gblink=rgblynk
+alias gbfix=rgbfix
+
+# Flush Directory Service cache
+alias flushdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
