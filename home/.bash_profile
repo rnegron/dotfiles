@@ -63,8 +63,14 @@ fi
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
+# Git branch in prompt.
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # Alias
 source "$HOME/.aliases"
 
 # Prompt setup
- export PS1="\u @ \W$ "
+export PS1="\u @ \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
