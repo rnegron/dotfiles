@@ -31,12 +31,12 @@ brew install pyenv
 
 # Install Python
 echo "Installing Python..."
-pyenv install 3.6.8
-pyenv global 3.6.8
+pyenv install 3.7.3
+pyenv global 3.7.3
 
 # Global Pip stuff
 echo "Installing Python packages..."
-pip3 install -U pip 
+pip3 install -U pip
 pip3 install -U virtualenv virtualenvwrapper black
 
 echo "Installing VimAwesome..."
