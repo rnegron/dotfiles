@@ -1,16 +1,15 @@
 {
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Dracula",
     "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 18,
     "workbench.startupEditor": "newUntitledFile",
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
     "python.analysis.logLevel": "Information",
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--py36"
     ],
-    "jetbrainsKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.formatOnPaste": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -18,8 +17,29 @@
     "explorer.confirmDragAndDrop": false,
     "python.jediEnabled": false,
     "terminal.integrated.fontSize": 18,
-    "standard.semistandard": true,
     "javascript.validate.enable": false,
-    "editor.formatOnSave": true,
-    "window.title": "${activeEditorMedium}${separator}${rootName}"
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+    ],
+    "eslint.packageManager": "yarn",
+    "[typescript]": {
+        "editor.formatOnSave": false,
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "python.venvPath": "~/.virtualenvs",
+    "extensions.ignoreRecommendations": true,
+    "editor.renderWhitespace": "none",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    }
 }

@@ -10,11 +10,10 @@ felixrieseberg.vsc-ember-cli
 johnpapa.vscode-peacock
 josa.ember-related-files
 mfeckies.handlebars-formatter
+ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode.Go
 ms-vsliveshare.vsliveshare
-PeterJausovec.vscode-docker
 phanitejakomaravolu.EmberES6Snippets
 PKief.material-icon-theme
-Tyriar.lorem-ipsum
 VisualStudioExptTeam.vscodeintellicode

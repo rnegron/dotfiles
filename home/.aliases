@@ -1,6 +1,5 @@
 # Shortcuts
 alias cl="clear"
-alias o='open .'
 
 # exa replaces ls
 alias ls="exa -lG --color-scale --git"
@@ -13,7 +12,7 @@ export BAT_THEME="TwoDark"
 alias help='tldr'
 
 # Etc.
-alias fix_gestures="killall Dock"
+alias fixgestures="killall Dock"
 alias dj="python manage.py"
 alias killmigrations="find . -path \"*/migrations/*.py\" -not -name \"__init__.py\" -delete"
 alias github="cd ~/code/github/"
@@ -33,6 +32,3 @@ alias gbfix=rgbfix
 
 # Flush Directory Service cache
 alias flushdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
