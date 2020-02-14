@@ -21,6 +21,7 @@ sudo xcodebuild -license accept
 # Install nvm
 echo "==> Installing nvm..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | zsh
+
 # Install latest release of node
 echo "==> Installing latest node LTS via nvm..."
 nvm install lts/*  --latest-npm
@@ -46,9 +47,6 @@ echo "==> Installing VimAwesome..."
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-# Reload profile
-source ~/.zshrc
-
 # VSCode packages
 echo "==> Installing VSCode Packages..."
 xargs -n 1 code --install-extension < ~/code/github/dotfiles/vscode/extensions.txt
@@ -60,5 +58,8 @@ git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 echo "==> Cleaning up Homebrew..."
 brew cleanup
+
+# Reload profile
+source ~/.zshrc
 
 echo "==> Done!"
