@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env zsh
+
+set -euo pipefail
 
 # Gets a list of files
 function getFilesInDir() {
@@ -17,19 +19,18 @@ function symlinkFilesTo() {
 }
 
 # Home files
-echo "--> home symlinks.."
+echo "==> Setting Home symlink..."
 symlinkFilesTo home "${HOME}"
 
 # vscode
-echo "--> VSCode symlinks..."
+echo "==> Setting VSCode symlink..."
 mkdir -p "${HOME}/Library/Application Support/Code/User/snippets"
 symlinkFilesTo vscode "${HOME}/Library/Application Support/Code/User"
-
-# Done
-echo "--> Done!"
 
 # Unset
 unset getFilesInDir
 unset symlinkFilesTo
 
-source ~/.bash_profile
+source ~/.zshrc
+
+echo "==> Done!"

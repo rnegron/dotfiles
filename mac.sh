@@ -1,8 +1,8 @@
-#!/bin/bash
-echo "==> Running osx.sh"
+#!/usr/bin/env zsh
 
-# Keep folders on top when sorting by name
-defaults write com.apple.finder _FXSortFoldersFirst -bool true
+set -euo pipefail
+
+echo "==> Running mac.sh..."
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -51,12 +51,6 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Disable Touch Bar typing suggestions
-defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
-
-# Touch Bar shows expanded control strip
-defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip
-
 # Require password immediately after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
@@ -85,3 +79,5 @@ defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
 
 # Install System data files & security updates
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+
+echo "==> Done!"

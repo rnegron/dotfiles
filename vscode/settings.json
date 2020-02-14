@@ -1,44 +1,52 @@
 {
+    "terminal.external.osxExec": "iTerm.app",
     "workbench.iconTheme": "material-icon-theme",
+    "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Dracula",
-    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 18,
-    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontSize": 20,
+    "editor.fontLigatures": true,
     "editor.minimap.enabled": true,
-    "python.analysis.logLevel": "Information",
+    "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "terminal.integrated.fontFamily": "'JetBrains Mono'",
+    "terminal.integrated.fontSize": 20,
+    "explorer.confirmDelete": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveshare.featureSet": "insiders",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDragAndDrop": false,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--py36"
     ],
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.formatOnPaste": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "python.jediEnabled": false,
-    "terminal.integrated.fontSize": 18,
-    "javascript.validate.enable": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "eslint.autoFixOnSave": true,
-    "eslint.validate": [
-        "javascript",
-        {
-            "language": "typescript",
-            "autoFix": true
-        },
-    ],
-    "eslint.packageManager": "yarn",
-    "[typescript]": {
-        "editor.formatOnSave": false,
-    },
+    "git.autofetch": true,
+    "workbench.startupEditor": "newUntitledFile",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "python.venvPath": "~/.virtualenvs",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[handlebars]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
     "extensions.ignoreRecommendations": true,
-    "editor.renderWhitespace": "none",
+    "terminal.integrated.rendererType": "dom",
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.fontWeight": "500",
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     }
