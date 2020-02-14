@@ -24,13 +24,11 @@ symlinkFilesTo home "${HOME}"
 
 # vscode
 echo "==> Setting VSCode symlink..."
-mkdir -p "${HOME}/Library/Application Support/Code/User/snippets"
+mkdir -p "${HOME}/Library/Application Support/Code/User"
 symlinkFilesTo vscode "${HOME}/Library/Application Support/Code/User"
 
 # Unset
 unset getFilesInDir
 unset symlinkFilesTo
-
-source ~/.zshrc
 
 echo "==> Done!"
