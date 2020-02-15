@@ -4,11 +4,11 @@ Borrowed from [jpadilla/dotfiles](https://github.com/jpadilla/dotfiles), [gcolla
 
 ## Install
 
-<!-- ```
+```
 curl -o- https://rnegron.me/bootstrap.sh | zsh
 ```
 
-or -->
+or
 
 ```
 curl -o- https://raw.githubusercontent.com/rnegron/dotfiles/master/bootstrap.sh | zsh
