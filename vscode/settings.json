@@ -49,5 +49,14 @@
     "editor.fontWeight": "500",
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
-    }
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.enableFiletypes": [
+        "!json"
+    ],
+    "cSpell.userWords": [
+        "BRAINHI"
+    ]
 }

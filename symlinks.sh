@@ -14,7 +14,7 @@ function symlinkFilesTo() {
     # Make symlink
     cleanPath=$(echo "$F" | sed 's,^[^/]*/,,')
     echo "- ${2}/${cleanPath} -> ${1}/${cleanPath}"
-    ln -sfn "${PWD}/${1}/${cleanPath}" "${2}/${cleanPath}"
+    sudo ln -sfn "${PWD}/${1}/${cleanPath}" "${2}/${cleanPath}"
   done
 }
 

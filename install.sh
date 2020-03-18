@@ -15,19 +15,16 @@ echo "==> Installing Homebrew bundle..."
 brew tap Homebrew/bundle
 brew bundle
 
-# Accept Xcode license
-sudo xcodebuild -license accept
-
 # Install nvm
 echo "==> Installing nvm..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | zsh
 
 # Install latest release of node
 echo "==> Installing latest node LTS via nvm..."
-nvm install lts/*  --latest-npm
+nvm install --lts
 
 echo "==> Installing yarn..."
-brew install yarn --without-node
+brew install yarn
 
 echo "==> Installing pyenv..."
 brew install pyenv
@@ -35,8 +32,8 @@ brew install pyenv
 # Install Python
 echo "==> Installing Python versions via pyenv..."
 pyenv install 2.7.17
-pyenv install 3.8.1
-pyenv global 3.8.1
+pyenv install 3.8.2
+pyenv global 3.8.2
 
 # Global Pip stuff
 echo "==> Installing Python packages..."
@@ -54,6 +51,10 @@ xargs -n 1 code --install-extension < ~/code/github/dotfiles/vscode/extensions.t
 # zsh
 echo "==> Installing ohmyzsh and pure theme..."
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Move the original .zsh back where it belongs
+mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 echo "==> Cleaning up Homebrew..."
