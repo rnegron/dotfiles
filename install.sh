@@ -21,6 +21,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | zsh
 
 # Install latest release of node
 echo "==> Installing latest node LTS via nvm..."
+[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 nvm install --lts
 
 echo "==> Installing yarn..."
