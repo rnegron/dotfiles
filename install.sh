@@ -56,6 +56,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # Move the original .zsh back where it belongs
 mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 
+# Install pure prompt
+mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 echo "==> Cleaning up Homebrew..."
