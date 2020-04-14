@@ -7,6 +7,9 @@ esbenp.prettier-vscode
 exiasr.hadolint
 firefox-devtools.vscode-firefox-debug
 GitHub.vscode-pull-request-github
+heybourn.headwind
+johnpapa.vscode-peacock
+mauve.terraform
 ms-azuretools.vscode-docker
 ms-python.python
 ms-vsliveshare.vsliveshare

@@ -32,3 +32,15 @@ alias gbfix=rgbfix
 
 # Flush Directory Service cache
 alias flushdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+
+# BrainHi
+alias up="docker-compose up --build --detach"
+alias down="docker-compose down -v"
+alias makemigrations="docker-compose run web python manage.py makemigrations"
+alias migrate="docker-compose run web python manage.py migrate"
+alias testea="docker-compose run -e DJANGO_CONFIGURATION=Testing web pytest --reuse-db"
+alias cubreme="docker-compose run -e DJANGO_CONFIGURATION=Testing web pytest --reuse-db --cov=cosmos"
+alias run="docker-compose run web python manage.py"
+alias logs="docker-compose logs -f web"
+alias shellme="docker-compose run web python manage.py shell_plus"
+alias cosmosredis="docker-compose run redis redis-cli -h redis"

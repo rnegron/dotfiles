@@ -109,6 +109,7 @@ export GREP_OPTIONS='--color=auto'
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
+export PATH="$HOME/.poetry/bin:$PATH"
 
 # Homebrew
 export PATH="/usr/local/bin:$PATH"

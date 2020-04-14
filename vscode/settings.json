@@ -3,7 +3,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Dracula",
-    "editor.fontSize": 20,
+    "editor.fontSize": 18,
     "editor.fontLigatures": true,
     "editor.minimap.enabled": true,
     "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
@@ -58,5 +58,9 @@
     ],
     "cSpell.userWords": [
         "BRAINHI"
-    ]
+    ],
+    "window.zoomLevel": 1,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
