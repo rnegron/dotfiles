@@ -5,7 +5,7 @@ Borrowed from [jpadilla/dotfiles](https://github.com/jpadilla/dotfiles), [gcolla
 ## Install
 
 ```
-curl -o- https://rnegron.me/bootstrap.sh | zsh
+curl -o- https://raulnegron.me/bootstrap.sh | zsh
 ```
 
 or
