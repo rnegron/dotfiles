@@ -1,66 +1,103 @@
 {
-    "terminal.external.osxExec": "iTerm.app",
-    "workbench.iconTheme": "material-icon-theme",
-    "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Dracula",
-    "editor.fontSize": 18,
-    "editor.fontLigatures": true,
-    "editor.minimap.enabled": true,
-    "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
-    "window.title": "${activeEditorMedium}${separator}${rootName}",
-    "terminal.integrated.fontFamily": "'JetBrains Mono'",
-    "terminal.integrated.fontSize": 20,
-    "explorer.confirmDelete": false,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "liveshare.featureSet": "insiders",
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "explorer.confirmDragAndDrop": false,
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "--py36"
-    ],
-    "git.autofetch": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[handlebars]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "extensions.ignoreRecommendations": true,
-    "terminal.integrated.rendererType": "dom",
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false,
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "editor.fontWeight": "500",
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "cSpell.enableFiletypes": [
-        "!json"
-    ],
-    "cSpell.userWords": [
-        "BRAINHI"
-    ],
-    "window.zoomLevel": 1,
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "terminal.external.osxExec": "iTerm.app",
+  "workbench.iconTheme": "material-icon-theme",
+  "telemetry.enableTelemetry": false,
+  "workbench.colorTheme": "Dracula",
+  "editor.fontSize": 18,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": true,
+  "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "terminal.integrated.fontFamily": "'JetBrains Mono'",
+  "terminal.integrated.fontSize": 20,
+  "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveshare.featureSet": "insiders",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--py36"],
+  "git.autofetch": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[handlebars]": {
+    "editor.defaultFormatter": "embertooling.prettier-for-handlebars-vscode"
+  },
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.rendererType": "dom",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.jediEnabled": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "editor.fontWeight": "500",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.enableFiletypes": ["!json"],
+  "cSpell.userWords": [
+    "BRAINHI",
+    "Blocklisted",
+    "Heroicons",
+    "JSONAPI",
+    "SECURECLAIM",
+    "Scroller",
+    "Telemedicine",
+    "appt",
+    "appts",
+    "asgiref",
+    "astimezone",
+    "athm",
+    "boto",
+    "camelize",
+    "dasherize",
+    "dateutil",
+    "gzipped",
+    "httpx",
+    "inteliquent",
+    "lightbox",
+    "mixpanel",
+    "pytest",
+    "rsplit",
+    "serializers",
+    "simplejwt",
+    "strftime",
+    "strptime",
+    "testid",
+    "twilio",
+    "tzinfo",
+    "undelete",
+    "vgstack"
+  ],
+  "window.zoomLevel": 1,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "off",
+  "python.showStartPage": false,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
     }
+  ]
 }

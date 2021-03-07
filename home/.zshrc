@@ -120,6 +120,11 @@ export HOMEBREW_INSTALL_CLEANUP=1
 
 # Python
 export PYTHONDONTWRITEBYTECODE=true
+export PYCURL_SSL_LIBRARY=openssl
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # gbdev
 export PATH="~/code/gb_dev/gbdk-n/bin:$PATH"
@@ -129,7 +134,6 @@ export PATH="~/code/gb_dev/sdcc/bin:$PATH"
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -141,4 +145,3 @@ source "$HOME/.aliases"
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
-

@@ -5,7 +5,7 @@ set -euo pipefail
 echo "==> Running install.sh..."
 
 echo "==> Installing Homebrew..."
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "==> Updating Hombrew..."
 brew update
@@ -32,14 +32,16 @@ brew install pyenv
 
 # Install Python
 echo "==> Installing Python versions via pyenv..."
-pyenv install 2.7.17
-pyenv install 3.8.2
-pyenv global 3.8.2
+pyenv install 2.7.18
+pyenv install 3.7.10
+pyenv install 3.8.8
+pyenv install 3.9.2
+pyenv global 3.8.8
 
 # Global Pip stuff
 echo "==> Installing Python packages..."
 pip3 install -U pip
-pip3 install -U virtualenv black pipenv
+pip3 install -U virtualenv black pipenv pre-commit
 
 
 # Poetry
@@ -60,7 +62,8 @@ echo "==> Installing ohmyzsh and pure theme..."
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Move the original .zsh back where it belongs
-mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+cd ~
+mv .zshrc.pre-oh-my-zsh .zshrc
 
 # Install pure prompt
 mkdir -p "$HOME/.zsh"

@@ -11,6 +11,15 @@ export BAT_THEME="TwoDark"
 # tldr replaces man
 alias help='tldr'
 
+# trash replaces rm
+alias rm='trash'
+
+# git shortcuts
+alias gb="git branch"
+alias gc="git commit -m"
+alias gco="git checkout"
+alias gp="git pull --ff-only"
+
 # Etc.
 alias fixgestures="killall Dock"
 alias dj="python manage.py"
@@ -18,7 +27,6 @@ alias killmigrations="find . -path \"*/migrations/*.py\" -not -name \"__init__.p
 alias github="cd ~/code/github/"
 
 # gbdev
-alias gb="cd ~/code/gb_dev/"
 alias bgb="wine /Applications/bgb/bgb.exe"
 alias gbmap="wine ~/code/gb_dev/gbmb/GBMB.EXE"
 alias gbtile="wine ~/code/gb_dev/gbtd/GBTD.EXE"
@@ -36,11 +44,10 @@ alias flushdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 # BrainHi
 alias up="docker-compose up --build --detach"
 alias down="docker-compose down -v"
-alias makemigrations="docker-compose run web python manage.py makemigrations"
-alias migrate="docker-compose run web python manage.py migrate"
+alias makemigrations="docker-compose run web python manage.py makemigrations --lint"
 alias testea="docker-compose run -e DJANGO_CONFIGURATION=Testing web pytest --reuse-db"
 alias cubreme="docker-compose run -e DJANGO_CONFIGURATION=Testing web pytest --reuse-db --cov=cosmos"
 alias run="docker-compose run web python manage.py"
-alias logs="docker-compose logs -f web"
-alias shellme="docker-compose run web python manage.py shell_plus"
-alias cosmosredis="docker-compose run redis redis-cli -h redis"
+alias logs="docker-compose logs -f web worker"
+alias shell="docker-compose run web python manage.py shell_plus"
+alias bh-connect="sshuttle --dns -r"
