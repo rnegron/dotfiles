@@ -136,7 +136,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
 # Aliases
 source "$HOME/.aliases"
@@ -145,3 +147,4 @@ source "$HOME/.aliases"
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

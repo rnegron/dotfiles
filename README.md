@@ -11,7 +11,7 @@ curl -o- https://raulnegron.me/bootstrap.sh | zsh
 or
 
 ```
-curl -o- https://raw.githubusercontent.com/rnegron/dotfiles/master/bootstrap.sh | zsh
+curl -o- https://raw.githubusercontent.com/rnegron/dotfiles/main/bootstrap.sh | zsh
 ```
 
 ## Manual Download

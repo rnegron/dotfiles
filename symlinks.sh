@@ -22,11 +22,6 @@ function symlinkFilesTo() {
 echo "==> Setting Home symlink..."
 symlinkFilesTo home "${HOME}"
 
-# vscode
-echo "==> Setting VSCode symlink..."
-mkdir -p "${HOME}/Library/Application Support/Code/User"
-symlinkFilesTo vscode "${HOME}/Library/Application Support/Code/User"
-
 # Unset
 unset getFilesInDir
 unset symlinkFilesTo

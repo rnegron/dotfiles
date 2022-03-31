@@ -53,10 +53,6 @@ echo "==> Installing VimAwesome..."
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-# VSCode packages
-echo "==> Installing VSCode Packages..."
-xargs -n 1 code --install-extension < ~/code/github/dotfiles/vscode/extensions.txt
-
 # zsh
 echo "==> Installing ohmyzsh and pure theme..."
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
