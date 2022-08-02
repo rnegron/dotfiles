@@ -11,9 +11,6 @@ export BAT_THEME="TwoDark"
 # tldr replaces man
 alias help='tldr'
 
-# trash replaces rm
-alias rm='trash'
-
 # git shortcuts
 alias gb="git branch"
 alias gc="git commit -m"
