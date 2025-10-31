@@ -20,24 +20,18 @@ echo "==> Adding asdf plugins..."
 asdf plugin add python
 asdf plugin add nodejs
 
+# make sure we are in the home directory
+cd ~
+
 # Install Python versions
 echo "==> Installing Python versions via asdf..."
-asdf install python 3.13.4
-asdf global python 3.12.11
+asdf install python latest
+asdf set python latest
 
 # Install Node.js LTS
-echo "==> Installing Node.js LTS via asdf..."
-asdf install nodejs 22.15.0
-asdf global nodejs 22.15.0
-
-# Global Python packages (using uv for better performance)
-echo "==> Installing Python packages..."
-pip3 install -U pip
-pip3 install -U virtualenv pre-commit
-
-# Poetry
-echo "==> Installing Poetry..."
-brew install poetry
+echo "==> Installing Node.js via asdf..."
+asdf install nodejs latest
+asdf set nodejs latest
 
 # VimAwesome
 echo "==> Installing VimAwesome..."
