@@ -23,9 +23,6 @@ cd ~/code/github
 git clone https://github.com/rnegron/dotfiles.git
 cd dotfiles
 
-# Defaults
-./mac.sh
-
 # Symlinks
 ./symlinks.sh
 

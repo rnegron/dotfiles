@@ -1,24 +1,14 @@
 # Shortcuts
 alias cl="clear"
 
-# exa replaces ls
-alias ls="exa -lG --color-scale --git"
+# eza replaces ls
+alias ls="eza"
 
 # bat replaces cat
 alias cat="bat --paging=never"
 export BAT_THEME="TwoDark"
 
-# tldr replaces man
-alias help='tldr'
-
-# git shortcuts
-alias gb="git branch"
-alias gc="git commit -m"
-alias gco="git checkout"
-alias gp="git pull --ff-only"
-
 # Etc.
-alias fixgestures="killall Dock"
 alias dj="python manage.py"
 alias killmigrations="find . -path \"*/migrations/*.py\" -not -name \"__init__.py\" -delete"
 alias github="cd ~/code/github/"

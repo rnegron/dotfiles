@@ -5,7 +5,7 @@ Borrowed from [jpadilla/dotfiles](https://github.com/jpadilla/dotfiles), [gcolla
 ## Install
 
 ```
-curl -o- https://raulnegron.me/bootstrap.sh | zsh
+curl -o- http://raul.pr/bootstrap.sh | zsh
 ```
 
 or
@@ -13,8 +13,3 @@ or
 ```
 curl -o- https://raw.githubusercontent.com/rnegron/dotfiles/main/bootstrap.sh | zsh
 ```
-
-## Manual Download
-
-* [Aseprite](https://dacap.itch.io/aseprite)
-* [PICO-8](https://www.lexaloffle.com/games.php?page=updates)

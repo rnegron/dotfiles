@@ -5,48 +5,39 @@ set -euo pipefail
 echo "==> Running install.sh..."
 
 echo "==> Installing Homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "==> Updating Hombrew..."
+echo "==> Updating Homebrew..."
 brew update
 brew upgrade
 
-echo "==> Installing Homebrew bundle..."
-brew tap Homebrew/bundle
-brew bundle
+# asdf is now installed via Brewfile
+echo "==> Configuring asdf..."
+source "$(brew --prefix asdf)/libexec/asdf.sh"
 
-# Install nvm
-echo "==> Installing nvm..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | zsh
+# Add asdf plugins
+echo "==> Adding asdf plugins..."
+asdf plugin add python
+asdf plugin add nodejs
 
-# Install latest release of node
-echo "==> Installing latest node LTS via nvm..."
-[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
-nvm install --lts
+# Install Python versions
+echo "==> Installing Python versions via asdf..."
+asdf install python 3.13.4
+asdf global python 3.12.11
 
-echo "==> Installing yarn..."
-brew install yarn
+# Install Node.js LTS
+echo "==> Installing Node.js LTS via asdf..."
+asdf install nodejs 22.15.0
+asdf global nodejs 22.15.0
 
-echo "==> Installing pyenv..."
-brew install pyenv
-
-# Install Python
-echo "==> Installing Python versions via pyenv..."
-pyenv install 2.7.18
-pyenv install 3.7.10
-pyenv install 3.8.8
-pyenv install 3.9.2
-pyenv global 3.8.8
-
-# Global Pip stuff
+# Global Python packages (using uv for better performance)
 echo "==> Installing Python packages..."
 pip3 install -U pip
-pip3 install -U virtualenv black pipenv pre-commit
-
+pip3 install -U virtualenv pre-commit
 
 # Poetry
 echo "==> Installing Poetry..."
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+brew install poetry
 
 # VimAwesome
 echo "==> Installing VimAwesome..."
@@ -55,7 +46,8 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # zsh
 echo "==> Installing ohmyzsh and pure theme..."
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 
 # Move the original .zsh back where it belongs
 cd ~
