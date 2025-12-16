@@ -8,10 +8,11 @@ alias ls="eza"
 alias cat="bat --paging=never"
 export BAT_THEME="TwoDark"
 
-# Etc.
 alias dj="python manage.py"
 alias killmigrations="find . -path \"*/migrations/*.py\" -not -name \"__init__.py\" -delete"
 alias github="cd ~/code/github/"
+alias claude="~/.claude/local/claude"
+
 
 # gbdev
 alias bgb="wine /Applications/bgb/bgb.exe"

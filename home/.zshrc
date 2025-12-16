@@ -1,4 +1,4 @@
-export ZSH="/Users/rauln/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME=""
 
@@ -32,9 +32,21 @@ export PYTHONDONTWRITEBYTECODE=true
 export PATH="$(brew --prefix openssl@3)/bin:$PATH"
 
 # gbdev
-export PATH="~/code/gb_dev/gbdk-n/bin:$PATH"
-export PATH="~/code/gb_dev/gbdk/bin:$PATH"
-export PATH="~/code/gb_dev/sdcc/bin:$PATH"
+export PATH="$HOME/code/gb_dev/gbdk-n/bin:$PATH"
+export PATH="$HOME/code/gb_dev/gbdk/bin:$PATH"
+export PATH="$HOME/code/gb_dev/sdcc/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# golang
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # asdf version manager
 source "$(brew --prefix asdf)/libexec/asdf.sh"
