@@ -87,6 +87,45 @@ Prioritize these qualities in order:
    - Mock external dependencies appropriately
    - Implement proper error boundaries and handling
 
+## Software Design Principles (From: "A Philosophy of Software Design")
+
+Apply these principles when writing, reviewing, or refactoring code. When generating new code, follow these guidelines by default. When reviewing existing code, flag violations of these principles. When asked to explain design decisions, reference these concepts.
+
+### Module Design
+- **Prefer deep modules**: Maximize functionality behind minimal interfaces. A module's value = functionality provided ÷ interface complexity. Avoid shallow modules that expose complex interfaces for little functionality.
+- **Simple interfaces over simple implementations**: When facing a tradeoff, invest complexity in the implementation to keep interfaces clean. Users of your code interact with interfaces, not implementations.
+- **Design interfaces for common cases**: The most frequent usage patterns should require the least code. Defaults should handle 90% of cases; parameters only for the uncommon.
+
+### Abstraction & Layering
+- **General-purpose modules are deeper**: Design interfaces general enough to serve multiple use cases, even if current implementation is specific. A narrow interface serving broad needs beats a broad interface serving narrow needs.
+- **Separate general-purpose from special-purpose code**: Keep reusable mechanisms distinct from application-specific logic. General code belongs in lower layers; special-purpose code in higher layers.
+- **Each layer should have distinct abstractions**: If adjacent layers use similar abstractions, they may belong together. Pass-through methods often signal poor layer boundaries.
+
+### Complexity Management
+- **Pull complexity downward**: Handle complexity inside modules rather than exposing it to callers. If something is hard, make it the module's problem, not the user's.
+- **Define errors out of existence**: Redesign APIs so error conditions cannot occur, rather than handling them. Example: a delete operation that succeeds if the item doesn't exist removes an error case entirely.
+
+### Code Quality
+- **Comments for non-obvious information only**: Don't repeat what code says. Document *why*, not *what*. Explain design decisions, non-obvious constraints, and things the next reader will wonder about.
+- **Optimize for reading, not writing**: Code is read 10x more than written. Choose clarity over cleverness. Make the reader's job easy, even if it costs extra keystrokes.
+- **Develop in abstractions, not features**: Each increment should improve the system's structure, not just add functionality. Resist tactical programming that accumulates complexity.
+
+### Red Flags
+When writing or reviewing code, watch for these warning signs. If you spot one, fix it or call it out:
+
+- **Shallow Module**: Interface complexity approaches implementation complexity—the abstraction isn't earning its keep.
+- **Information Leakage**: The same design decision appears in multiple modules. Consolidate the knowledge in one place.
+- **Temporal Decomposition**: Code structure mirrors execution order rather than information hiding. Group by shared knowledge, not by when things run.
+- **Overexposure**: Common operations require awareness of rarely-used features. Simple cases should stay simple.
+- **Pass-Through Method**: A method that just forwards arguments to another similar method. Indicates a missing abstraction or unnecessary layer.
+- **Repetition**: Non-trivial code duplicated in multiple places. If it's worth writing twice, it's worth naming once.
+- **Special-General Mixture**: Generic mechanisms tangled with application-specific logic. Separate them.
+- **Conjoined Methods**: Two methods so interdependent you can't understand one without the other. They likely belong together or need better separation.
+- **Comment Repeats Code**: Comment adds nothing beyond what code says. Delete it or explain *why*, not *what*.
+- **Implementation Contaminates Interface**: Interface docs mention implementation details users don't need.
+- **Vague Name**: Names like `data`, `process`, `handle`, `temp` convey nothing. Be specific.
+- **Nonobvious Code**: Behavior not apparent from reading. Refactor for clarity or add a comment explaining why.
+
 ## Development Process
 
 ### Planning Phase
