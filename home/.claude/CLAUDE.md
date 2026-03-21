@@ -28,9 +28,9 @@ Prioritize in order:
 6. **Accessible** - WCAG 2.1 AA: semantic HTML, ARIA labels, keyboard nav, color contrast.
 7. **Testable** - Pure functions, dependency injection, proper mocking.
 
-## Software Design (from "A Philosophy of Software Design")
+## Software Design
 
-Apply these principles when writing, reviewing, or refactoring code.
+Apply these principles (Ousterhout's APOSD + Pike's Rules) when writing, reviewing, or refactoring code.
 
 ### Module Design
 
@@ -48,6 +48,12 @@ Apply these principles when writing, reviewing, or refactoring code.
 
 - **Pull complexity downward**: Handle complexity inside modules, not in callers.
 - **Define errors out of existence**: Redesign APIs so error conditions cannot occur (e.g., delete succeeds if item doesn't exist).
+- **Data dominates**: The right data structures make algorithms self-evident. Stupid code with smart objects beats smart code with stupid objects.
+- **Simple beats fancy**: Prefer simple algorithms and simple data structures. Fancy algorithms have big constants, n is usually small, and complexity breeds bugs.
+
+### Performance
+
+- **Bottlenecks are never where you expect**: Do not add speed hacks without proof. Measure first, optimize only the part that overwhelms the rest.
 
 ### Red Flags
 
