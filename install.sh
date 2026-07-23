@@ -6,10 +6,14 @@ echo "==> Running install.sh..."
 
 echo "==> Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "==> Updating Homebrew..."
 brew update
 brew upgrade
+
+echo "==> Installing Brewfile packages..."
+brew bundle
 
 # asdf is now installed via Brewfile
 echo "==> Configuring asdf..."
