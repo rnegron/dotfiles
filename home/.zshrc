@@ -32,6 +32,9 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # Python
 export PYTHONDONTWRITEBYTECODE=true
 
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 # gbdev
 export PATH="$HOME/code/gb_dev/gbdk/bin:$PATH"
 export GBDK_HOME="$HOME/code/gb_dev/gbdk"

@@ -4,61 +4,46 @@ set -euo pipefail
 
 echo "==> Running install.sh..."
 
-echo "==> Installing Homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew >/dev/null 2>&1; then
+  echo "==> Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Shell setup first: a package failure below must not leave zsh broken
+echo "==> Installing ohmyzsh..."
+[ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+
+echo "==> Installing pure prompt..."
+mkdir -p "$HOME/.zsh"
+[ -d "$HOME/.zsh/pure" ] || git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+
+echo "==> Installing VimAwesome..."
+[ -d "$HOME/.vim_runtime" ] || git clone --depth=1 https://github.com/amix/vimrc.git "$HOME/.vim_runtime"
 
 echo "==> Updating Homebrew..."
 brew update
 brew upgrade
 
 echo "==> Installing Brewfile packages..."
-brew bundle
+brew bundle || echo "==> WARNING: some Brewfile entries failed, re-run 'brew bundle' after fixing"
 
-# asdf is now installed via Brewfile
 echo "==> Configuring asdf..."
-source "$(brew --prefix asdf)/libexec/asdf.sh"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+asdf plugin add python 2>/dev/null || true
+asdf plugin add nodejs 2>/dev/null || true
 
-# Add asdf plugins
-echo "==> Adding asdf plugins..."
-asdf plugin add python
-asdf plugin add nodejs
-
-# make sure we are in the home directory
 cd ~
 
-# Install Python versions
-echo "==> Installing Python versions via asdf..."
+echo "==> Installing Python via asdf..."
 asdf install python latest
 asdf set python latest
 
-# Install Node.js LTS
 echo "==> Installing Node.js via asdf..."
 asdf install nodejs latest
 asdf set nodejs latest
 
-# VimAwesome
-echo "==> Installing VimAwesome..."
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
-
-# zsh
-echo "==> Installing ohmyzsh and pure theme..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
-# Move the original .zsh back where it belongs
-cd ~
-mv .zshrc.pre-oh-my-zsh .zshrc
-
-# Install pure prompt
-mkdir -p "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-
 echo "==> Cleaning up Homebrew..."
 brew cleanup
 
-# Reload profile
-source ~/.zshrc
-
-echo "==> Done!"
+echo "==> Done! Open a new shell."
