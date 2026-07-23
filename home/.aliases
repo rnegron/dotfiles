@@ -8,23 +8,21 @@ alias ls="eza"
 alias cat="bat --paging=never"
 export BAT_THEME="TwoDark"
 
+# Etc.
+alias apoya="cd ~/code/github/apoya"
 alias dj="python manage.py"
+alias fixgestures="killall Dock"
 alias killmigrations="find . -path \"*/migrations/*.py\" -not -name \"__init__.py\" -delete"
-alias github="cd ~/code/github/"
-alias claude="~/.claude/local/claude"
-
+alias flushdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias claude="CLAUDE_CODE_NO_FLICKER=1 claude"
 
 # gbdev
-alias bgb="wine /Applications/bgb/bgb.exe"
-alias gbmap="wine ~/code/gb_dev/gbmb/GBMB.EXE"
-alias gbtile="wine ~/code/gb_dev/gbtd/GBTD.EXE"
-alias gb-compile="gbdk-n-compile.sh"
-alias gb-link="gbdk-n-link.sh"
-alias gb-build="gbdk-n-make-rom.sh"
 alias dino=make
 alias gbasm=rgbasm
-alias gblink=rgblynk
+alias gblink=rgblink
 alias gbfix=rgbfix
-
-# Flush Directory Service cache
-alias flushdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias bgb="wine /Applications/bgbw64/bgb64.exe"
+alias gbmap="wine ~/code/gb_dev/GBMB/GBMB.EXE"
+alias gbtile="wine ~/code/gb_dev/GBTD/GBTD.EXE"
+alias aseprite="/Applications/Aseprite.app/Contents/MacOS/aseprite"
+alias emu="java -jar $HOME/code/gb_dev/Emulicious/Emulicious.jar"
